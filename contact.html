@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ | 千葉のピーナツ【豆ひで】</title>
+  <meta name="description" content="千葉のピーナツ豆ひでへのお問い合わせページです。商品に関するご質問・ご相談はお気軽にどうぞ。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="bodyBg">
+<div id="wrapper">
+
+<!-- ===== HEADER ===== -->
+<div id="header">
+  <div id="headerInner">
+    <h1 class="seo-title">千葉ピーナツ・八街産千葉半立・天日干し落花生を取り扱う【千葉のピーナツ豆ひで】へ</h1>
+    <div id="headerLeft">
+      <div id="logo">
+        <a href="index.html" class="logo-link">
+          <div class="logo-box">
+            <span class="logo-main">豆ひで</span>
+            <span class="logo-sub">千葉のピーナツ</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="headerRight">
+      <div class="header-contact">
+        <p class="header-tel"><span class="tel-label">お電話でのお問い合わせ</span><br /><span class="tel-num">043-422-5000</span></p>
+        <p class="header-hours">営業時間 AM9:30〜PM8:00（第1・2・3水曜定休）</p>
+      </div>
+      <div class="header-sns-shop">
+        <a href="https://www.e-peanut.co.jp/guide/" target="_blank" rel="noopener noreferrer" class="btn-ec">オンラインショップ</a>
+        <a href="https://www.instagram.com/peanutmamehide/" target="_blank" rel="noopener noreferrer" class="btn-insta">公式Instagram</a>
+      </div>
+    </div>
+    <!-- スマホ用メニューボタン (三本線) -->
+    <button id="menu-toggle" aria-label="メニュー開閉">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div id="headerBottom"></div>
+</div>
+
+<!-- ===== GNAVI ===== -->
+<div id="mainImageWrap">
+  <div id="mainImage">
+    <div class="mainImage-content">
+      <div class="mainImage-catch">
+        <p class="catch-en">CONTACT US</p>
+        <h2 class="catch-ja">お問い合わせ</h2>
+        <p class="catch-sub">ご質問・ご相談はお気軽にどうぞ</p>
+      </div>
+    </div>
+    <div id="gNavi">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">豆ひでのこだわり</a></li>
+        <li><a href="products.html">商品のご案内</a></li>
+        <li><a href="shop.html">店舗案内</a></li>
+        <li><a href="contact.html" class="active-nav">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTENT ===== -->
+<div id="content">
+  <div id="main">
+    <div id="mainInner">
+      <div id="bread"><div id="breadInner"><a href="index.html">ホーム</a>&nbsp;＞&nbsp;お問い合わせ</div></div>
+      <div id="contentsBoxWrap">
+        <div class="contents-line-top"></div>
+
+        <!-- ページタイトル -->
+        <div class="page-hero">
+          <div class="page-hero-inner">
+            <span class="page-hero-en">CONTACT US</span>
+            <h2>お問い合わせ</h2>
+            <p class="page-hero-sub">ご質問・ご相談はお気軽にどうぞ</p>
+          </div>
+        </div>
+
+        <!-- 説明 -->
+        <div class="contact-intro" style="margin-top:18px;">
+          商品に関するご質問、ご注文に関するご相談など、お気軽にお問い合わせください。<br />
+          お電話でのお問い合わせは <strong>043-422-5000</strong>（AM9:30〜PM8:00、第1・2・3水曜定休）まで。<br />
+          下記フォームよりお問い合わせいただいた場合は、２営業日以内にご返信いたします。
+        </div>
+
+        <!-- フォーム -->
+        <div class="section-head"><h3>お問い合わせフォーム</h3></div>
+        <form class="contact-form" id="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">お名前<span class="form-required">必須</span></label>
+            <input type="text" id="name" name="name" placeholder="例：山田 太郎" required />
+          </div>
+          <div class="form-row">
+            <label for="email">メールアドレス<span class="form-required">必須</span></label>
+            <input type="email" id="email" name="email" placeholder="例：example@example.com" required />
+          </div>
+          <div class="form-row">
+            <label for="tel">電話番号</label>
+            <input type="tel" id="tel" name="tel" placeholder="例：043-422-5000" />
+          </div>
+          <div class="form-row">
+            <label for="subject">件名<span class="form-required">必須</span></label>
+            <input type="text" id="subject" name="subject" placeholder="例：商品についてのご質問" required />
+          </div>
+          <div class="form-row">
+            <label for="message">お問い合わせ内容<span class="form-required">必須</span></label>
+            <textarea id="message" name="message" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="contact-submit">送信する</button>
+        </form>
+
+        <div class="contents-line-bottom"></div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div id="footer">
+  <div id="pagetopWrap"><a href="#wrapper" id="pagetop-btn">ページの先頭へ</a></div>
+  <div id="footerInner">
+    <div id="footerContent">
+
+      <div id="footerFreeArea">
+        <div id="footerNavi">
+          <p><a href="index.html">HOME</a>｜<a href="about.html">豆ひでのこだわり</a>｜<a href="products.html">商品のご案内</a>｜<a href="shop.html">店舗紹介</a>｜<a href="contact.html">お問い合わせ</a></p>
+          <p class="footer-sns-links">
+            <a href="https://www.e-peanut.co.jp/guide/" target="_blank" rel="noopener noreferrer" class="footer-sns-link ec-link">オンラインショップ (EC)</a>
+            <a href="https://www.instagram.com/peanutmamehide/" target="_blank" rel="noopener noreferrer" class="footer-sns-link insta-link">公式Instagram</a>
+          </p>
+        </div>
+        <div class="footerLogo">
+          <p class="footer-logo-name">千葉のピーナツ　豆ひで</p>
+          <p class="footer-logo-tel">TEL: 043-422-5000</p>
+          <p class="footer-logo-addr">千葉県四街道市四街道1-3-11</p>
+        </div>
+      </div>
+      <address>COPYRIGHT &copy; 千葉のピーナツ豆ひで　ALL RIGHTS RESERVED</address>
+    </div>
+    <div id="footerBottom"></div>
+  </div>
+</div>
+</div></div>
+<script src="script.js"></script>
+</body>
+</html>
