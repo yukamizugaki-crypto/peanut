@@ -10,7 +10,7 @@ if (pagetopBtn) {
 }
 
 // ===== 商品カードのフェードイン =====
-document.addEventListener('DOMContentLoaded', function() {
+function init() {
   var cards = document.querySelectorAll('.product-card, .cartBox, .news-item, .topBox');
   cards.forEach(function(card, i) {
     card.style.opacity = '0';
@@ -50,22 +50,51 @@ document.addEventListener('DOMContentLoaded', function() {
   var header = document.getElementById('header');
   var gNavi = document.getElementById('gNavi');
   var headerRight = document.getElementById('headerRight');
-  if (header && gNavi && window.innerWidth <= 768) {
-    header.appendChild(gNavi);
+  var originalParent = document.getElementById('mainImage');
+  var mobileContact = null;
 
-    // お問い合わせ情報やSNSボタンをモバイルメニューの下部に複製して挿入
-    if (headerRight) {
-      var mobileContact = document.createElement('div');
-      mobileContact.className = 'mobile-menu-contact';
-      mobileContact.innerHTML = headerRight.innerHTML;
-      gNavi.appendChild(mobileContact);
+  function adjustLayout() {
+    if (window.innerWidth <= 768) {
+      if (header && gNavi && gNavi.parentNode !== header) {
+        header.appendChild(gNavi);
+
+        // お問い合わせ情報やSNSボタンをモバイルメニューの下部に複製して挿入
+        if (headerRight && !mobileContact) {
+          mobileContact = document.createElement('div');
+          mobileContact.className = 'mobile-menu-contact';
+          mobileContact.innerHTML = headerRight.innerHTML;
+          gNavi.appendChild(mobileContact);
+        }
+      }
+    } else {
+      if (originalParent && gNavi && gNavi.parentNode !== originalParent) {
+        originalParent.appendChild(gNavi);
+        
+        // モバイル用のお問い合わせ情報を削除
+        if (mobileContact && mobileContact.parentNode === gNavi) {
+          gNavi.removeChild(mobileContact);
+          mobileContact = null;
+        }
+
+        // 開閉状態をクリア
+        var menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle) {
+          menuToggle.classList.remove('menu-active');
+        }
+        gNavi.classList.remove('menu-active');
+      }
     }
   }
+
+  // 初期実行とリサイズイベントの登録
+  adjustLayout();
+  window.addEventListener('resize', adjustLayout);
 
   // ===== ハンバーガーメニューの開閉制御 =====
   var menuToggle = document.getElementById('menu-toggle');
   if (menuToggle && gNavi) {
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
       menuToggle.classList.toggle('menu-active');
       gNavi.classList.toggle('menu-active');
     });
@@ -77,5 +106,21 @@ document.addEventListener('DOMContentLoaded', function() {
         gNavi.classList.remove('menu-active');
       }
     });
+
+    // メニュー内のリンクをクリックしたときに自動でメニューを閉じる
+    var menuLinks = gNavi.querySelectorAll('a');
+    menuLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        menuToggle.classList.remove('menu-active');
+        gNavi.classList.remove('menu-active');
+      });
+    });
   }
-});
+}
+
+// DOM構築完了後に実行する安全なラッパー
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

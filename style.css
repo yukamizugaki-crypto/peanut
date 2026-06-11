@@ -496,6 +496,13 @@ ul { list-style: none; }
 .product-card:hover { box-shadow: 0 5px 18px rgba(100,60,20,.13); transform: translateY(-2px); }
 .product-card .card-img { flex-shrink: 0; width: 220px; }
 .product-card .card-img .photo-placeholder { width: 220px; height: 165px; }
+.product-card .card-img img {
+  width: 100%;
+  height: 165px;
+  object-fit: cover;
+  border: 1px solid #e0d8cc;
+  display: block;
+}
 .product-card .card-body { flex: 1; }
 .card-title {
   font-family: 'Noto Serif JP', serif;
@@ -949,6 +956,35 @@ address { font-size: 11px; color: #8c7361; font-style: normal; text-align: cente
     transform: translateY(-10px) rotate(-45deg);
   }
 
+  #mainImage.hero-home {
+    background: 
+      linear-gradient(165deg, rgba(252, 250, 246, 0.88) 0%, rgba(244, 238, 225, 0.82) 100%),
+      url("img/中手豊　殻付き.png") no-repeat center / cover;
+  }
+  #mainImage.hero-about {
+    background: 
+      linear-gradient(165deg, rgba(252, 250, 246, 0.88) 0%, rgba(244, 238, 225, 0.82) 100%),
+      url("img/Qなっつ 殻付.png") no-repeat center / cover;
+  }
+  #mainImage.hero-products {
+    background: 
+      linear-gradient(165deg, rgba(252, 250, 246, 0.88) 0%, rgba(244, 238, 225, 0.82) 100%),
+      url("img/千葉半立 味付け素煎り.png") no-repeat center / cover;
+  }
+  #mainImage.hero-shop {
+    background: 
+      linear-gradient(165deg, rgba(252, 250, 246, 0.88) 0%, rgba(244, 238, 225, 0.82) 100%),
+      url("img/塩ゆで冷凍おおまさり.png") no-repeat center / cover;
+  }
+  #mainImage.hero-contact {
+    background: 
+      linear-gradient(165deg, rgba(252, 250, 246, 0.88) 0%, rgba(244, 238, 225, 0.82) 100%),
+      url("img/天日干し千葉半立　殻付き.png") no-repeat center / cover;
+  }
+  #mainImage {
+    min-height: 180px;
+  }
+
   #mainImageWrap {
     position: relative;
   }
@@ -1062,8 +1098,8 @@ address { font-size: 11px; color: #8c7361; font-style: normal; text-align: cente
     border-color: #a63a2b;
   }
 
-  #content { flex-direction: column; }
-  #main { border-right: none; border-bottom: 1px solid #e0d8cc; }
+  #content { flex-direction: column; align-items: stretch; }
+  #main { width: 100%; border-right: none; border-bottom: 1px solid #e0d8cc; }
   #side { width: 100%; }
   .topBox { flex-direction: column; }
   .topBox-photo {
@@ -1081,13 +1117,14 @@ address { font-size: 11px; color: #8c7361; font-style: normal; text-align: cente
   .product-card { flex-direction: column; }
   .product-card .card-img { width: 100%; }
   .product-card .card-img .photo-placeholder { width: 100%; }
+  .product-card .card-img img { width: 100%; height: auto; max-height: 240px; }
   #footerFreeArea { flex-direction: column; }
   .footerLogo { text-align: left; }
   .top-bnr-wrap4 { flex-wrap: wrap; }
   .top-bnr4-item { min-width: calc(50% - 5px); }
-  .shop-info-wrap { flex-direction: column; }
-  .shop-table-wrap { max-width: 560px; width: 100%; }
-  .shop-map-wrap { max-width: 560px; width: 100%; }
+  .shop-info-wrap { flex-direction: column; align-items: stretch; width: 100%; }
+  .shop-table-wrap { max-width: 100%; width: 100%; }
+  .shop-map-wrap { max-width: 100%; width: 100%; }
   .shop-photo-wrap {
     display: flex;
     justify-content: center;
